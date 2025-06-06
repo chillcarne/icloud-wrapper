@@ -1,0 +1,49 @@
+{
+  "name": "icloud-wrapper",
+  "version": "1.0.2",
+  "description": "Electron wrapper for Apple iCloud (https://www.icloud.com)",
+  "main": "main.js",
+  "author": "Chillcarne <https://github.com/chillcarne/icloud-wrapper>",
+  "homepage": "https://github.com/chillcarne/icloud-wrapper",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist-linux": "mkdir -p dist/linux && electron-builder --linux",
+    "dist-windows": "mkdir -p dist/windows && electron-builder --win",
+    "dist-macos": "mkdir -p dist/macos && electron-builder --mac",
+    "dist-all": "mkdir -p dist/linux dist/windows dist/macos && electron-builder -mwl"
+  },
+  "devDependencies": {
+    "electron": "^25.9.8",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "dev.chillcarne.icloudwrapper",
+    "productName": "iCloud",
+    "directories": {
+      "output": "dist"
+    },
+    "linux": {
+      "target": [
+        "deb"
+      ],
+      "icon": "resources/icon.png",
+      "category": "Utility",
+      "artifactName": "linux/${productName}-${version}.${ext}"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "resources/icon.ico",
+      "artifactName": "windows/${productName}-Setup-${version}.${ext}"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "resources/icon.icns",
+      "artifactName": "macos/${productName}-${version}.${ext}"
+    }
+  }
+}
