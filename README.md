@@ -8,6 +8,7 @@ Electron wrapper for Apple iCloud (https://www.icloud.com)
 - **Continue where you left off**  
   Automatically reopens the last visited page on next launch instead of the default homepage.
 
+> ℹ️ Press `Alt` to open the settings menu.
 
 ## Installation
 
